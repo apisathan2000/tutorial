@@ -1,12 +1,14 @@
 # React Fundamentals
 
+This is NOT my course, I am following a course from John Smilga from Coding Addict (YouTube). He's a great teacher of JS frameworks. Go check him out !!
+
 #### React Course
 
 [My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
 
 #### Support
 
-Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
+Find the Content Useful? [You can always support John Smilga a coffee](https://www.buymeacoffee.com/johnsmilga)
 
 #### Folder Structure
 

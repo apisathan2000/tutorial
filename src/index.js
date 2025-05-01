@@ -4,22 +4,18 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const bookList = [
-  {
-    title: `It's Not Easy Being a Bunny: An Early Reader Book for Kids`,
-    author: ` Marilyn Sadler`,
-    img: `https://m.media-amazon.com/images/I/71ihGxMQEBL._SY342_.jpg`,
-    id: 1,
-  },
-  {
-    title: `The Let them theory`,
-    author: `Mel Robbins`,
-    img: `https://m.media-amazon.com/images/I/51UmNg33hCL._SY445_SX342_.jpg`,
-    id: 2,
-  },
-];
+import {books}  from "./books.js";
+
+import Book from './Book.js';
+import Title from "./Title.js";
+
+
 
 function BookList() {
+
+  const bookList = books;
+
+
   const someValue = "shakeAndBake";
   const displayValue = function () {
     console.log(someValue);
@@ -34,19 +30,24 @@ function BookList() {
   };
 
   return (
-    <section className="booklist">
-      {/* <EventExamples /> */}
+    <section>
+      <Title title={"Best Sellers"} />
 
-      {bookList.map(function (book) {
-        return (
-          <Book
-            book={book}
-            key={book.id}
-            displayValue={displayValue}
-            getBook={getBook}
-          />
-        );
-      })}
+      <section className="booklist">
+        {/* <EventExamples /> */}
+
+        {bookList.map(function (book, index) {
+          return (
+            <Book
+              book={book}
+              key={book.id}
+              displayValue={displayValue}
+              getBook={getBook}
+              number={index}
+            />
+          );
+        })}
+      </section>
     </section>
   );
 }
@@ -93,34 +94,6 @@ function BookList() {
 //   );
 // }
 
-function Book(props) {
-  const { id, img, title, author } = props.book;
-
-  const displayTitle = props.displayValue;
-  const getBooks = props.getBook;
-
-  //or
-
-  //  const {img, title, author, displayValue} = props
-
-  // const displayTitle = function() {
-  //   console.log(title);
-  // }
-
-  const getSingleBook = function() { 
-    getBooks(id);
-  }
-
-  return (
-    <article className="book">
-      <img src={img} />
-      <h2>{title}</h2>
-      <h4>{author}</h4>
-      {/* <button onClick={displayTitle}>Display Title</button> */}
-      <button onClick={getSingleBook}>Display Titles</button>
-    </article>
-  );
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
